@@ -19,6 +19,7 @@ public class AHBottomNavigationItem {
 
 	private String title = "";
 	private Drawable drawable;
+    private Drawable selectedDrawable;
 	private int color = Color.GRAY;
 
 	private
@@ -85,10 +86,11 @@ public class AHBottomNavigationItem {
 	 * @param drawable Drawable
 	 * @param color    Color
 	 */
-	public AHBottomNavigationItem(String title, Drawable drawable, @ColorInt int color) {
+	public AHBottomNavigationItem(String title, Drawable drawable, @ColorInt int color,Drawable selectedDrawable) {
 		this.title = title;
 		this.drawable = drawable;
 		this.color = color;
+		this.selectedDrawable = selectedDrawable;
 	}
 
 	public String getTitle(Context context) {
@@ -124,7 +126,7 @@ public class AHBottomNavigationItem {
 		this.colorRes = colorRes;
 		this.color = 0;
 	}
-	
+
 	public Drawable getDrawable(Context context) {
     if (drawableRes != 0) {
       try {
@@ -145,4 +147,12 @@ public class AHBottomNavigationItem {
 		this.drawable = drawable;
 		this.drawableRes = 0;
 	}
+
+    public void setSelectedDrawable(Drawable selectedDrawable) {
+        this.selectedDrawable = selectedDrawable;
+    }
+
+    public Drawable getSelectedDrawable() {
+        return selectedDrawable;
+    }
 }
